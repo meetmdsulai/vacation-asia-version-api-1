@@ -1,0 +1,10 @@
+generator client {
+  provider = "prisma-client"
+  output = "../src/generated/prisma"
+  moduleFormat = "cjs"
+}
+datasource db {
+  provider = "postgresql"
+}
+// No business models until a domain schema is approved.
+// Map application names to physical snake_case with @map and @@map.

@@ -1,0 +1,13 @@
+# Quotation Approval & Revision Rules
+- QTN-001 Customer-created quotation enters review, not booking.
+- QTN-002 Hotel confirmation is a primary approval criterion even when allocated inventory is displayed, because requested quantity may exceed allocation or supplier may decline.
+- QTN-003 Sightseeing confirmation is also required before approval because capacity may be occupied.
+- QTN-004 Transport and Meal confirmation do not block quotation approval; they are arranged operationally later.
+- QTN-005 Once Hotel + Sightseeing mandatory confirmations are satisfied, Admin can approve quotation and request >=50% initial payment.
+- QTN-006 Successful/verified >=50% payment converts the approved quotation into a booking.
+- QTN-007 Quotation can be revised multiple times; preserve version history. Default expiry is 3 days, configurable.
+- QTN-008 If requested Hotel rejects, Admin cannot silently replace it. Admin may suggest an alternative to customer; customer agreement leads to quotation revision and new confirmation.
+- AMD-001 After booking, customer cannot directly modify itinerary. Customer raises concern/change request; authorized Admin performs permitted amendment.
+- AMD-002 Post-booking Hotel change is restricted under current policy and paid Hotel amount is not recoverable for such a change.
+- AMD-003 Sightseeing, Meal and Transport may be amended only within applicable time/product rules and must be repriced.
+- AMD-004 Amendment preserves original financial history and calculates a delta/additional amount/refund impact rather than destructively rewriting history.

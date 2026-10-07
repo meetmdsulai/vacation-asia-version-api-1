@@ -1,0 +1,2 @@
+# Business Rule Intake Workflow
+When product owner supplies logic: ignore incidental SQL/schema as authoritative business truth unless explicitly approved; extract behavior/trigger/conditions/result/exceptions/affected domains; assign stable rule ID; mark APPROVED only when confirmed; update registry/domain knowledge; identify affected contracts/tests/screens; never silently reconcile contradictions.

@@ -1,0 +1,12 @@
+# Architecture Principles
+- Modular monolith first; microservice-ready boundaries always.
+- One capability has one owning domain. Domains communicate through contracts/ports, never another domain's repository.
+- No direct cross-domain table manipulation or distributed DB transaction.
+- Prisma is default persistence; optimized SQL/functions/procedures only when database-side execution has justified benefit and remains within one domain.
+- Local consistency uses local DB transactions; cross-domain consistency uses Saga/compensation.
+- Idempotency is mandatory for cross-domain commands, payments, refunds, webhooks and compensation.
+- Use transactional outbox where reliable event delivery matters.
+- PostgreSQL is transactional source of truth; Redis is optimization only.
+- Booking stores product/pricing/policy/tax snapshots needed for historical meaning.
+- Payment is provider-agnostic, isolated and separately deployable.
+- Architecture changes require ADR + Architecture Governor review.

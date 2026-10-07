@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.next/
+coverage/
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
+.pnpm_store/
+.tools/
+packages/database/src/generated/
+*.log

@@ -1,0 +1,21 @@
+node_modules
+coverage
+dist
+build
+.next
+.turbo
+*.min.js
+*.map
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Authoritative imported project knowledge
+.agents
+AGENTS.md
+INSTALL.md
+# Generated Prisma and framework output
+**/generated
+**/next-env.d.ts
+.pnpm_store
+.tools

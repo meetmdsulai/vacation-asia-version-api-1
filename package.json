@@ -1,0 +1,39 @@
+{
+  "name": "vacation_asia",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "pnpm@10.34.6",
+  "engines": {
+    "node": ">=24.0.0 <25",
+    "pnpm": ">=10.34.6 <11"
+  },
+  "scripts": {
+    "dev": "pnpm prepare:workspace && pnpm --parallel --filter './apps/*' dev",
+    "prepare:workspace": "pnpm --filter @vacation_asia/contracts build && pnpm --filter @vacation_asia/config build && pnpm --filter @vacation_asia/database build",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint . --max-warnings 0 && tsx scripts/checkArchitecture.ts",
+    "typecheck": "pnpm prepare:workspace && tsc --noEmit && pnpm -r typecheck",
+    "test": "pnpm prepare:workspace && vitest run && pnpm --filter @vacation_asia/api test",
+    "build": "pnpm -r build",
+    "db:generate": "pnpm --filter @vacation_asia/database db:generate",
+    "db:validate": "pnpm --filter @vacation_asia/database db:validate",
+    "db:migrate": "pnpm --filter @vacation_asia/database db:migrate",
+    "db:deploy": "pnpm --filter @vacation_asia/database db:deploy",
+    "infra:up": "docker compose --env-file .env -f infra/compose.yaml up -d --wait",
+    "infra:down": "docker compose --env-file .env -f infra/compose.yaml down",
+    "test:smoke": "tsx scripts/smokeTest.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "eslint": "10.12.0",
+    "eslint-config-prettier": "^10.1.0",
+    "prettier": "^3.6.0",
+    "tsx": "^4.20.0",
+    "typescript": "5.9.3",
+    "typescript-eslint": "^8.46.0",
+    "vitest": "4.1.11",
+    "@next/eslint-plugin-next": "16.4.0"
+  },
+  "type": "module"
+}
